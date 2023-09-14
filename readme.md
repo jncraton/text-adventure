@@ -12,10 +12,11 @@ On the technical end, your program must include the following:
 
 - `input` to collect instructions from the user as needed
 - `print` to display your narrative to the user
-- `if`, `elif`, and `else` to branch into different parts of the story
 - `exit` to end your program as needed
-
-Your storyline much branch at least 4 times, and use all of `if`, `elif`, and `else` at least once.
+- `if`, `elif`, and `else` to branch into different parts of the story
+    - Must include at least 4 separate `if` statements
+    - Must use `else` and `elif` at least once
+    - Must include at least one use of nested `if` statements
 
 Example
 -------
@@ -30,9 +31,9 @@ print("2) Leave the cave")
 choice = input("Enter your choice: ")
 
 if choice == '2':
-    print("You leave the cave and are immediate killed by a goblin.")
+    print("You leave the cave. You are killed by a goblin out.")
     exit()
 
 print("You take the sword and leave the cave.")
-print("A goblin sees you attacks, but you block with your sword.")
+print("A goblin sees you and attacks, but you block with your sword.")
 ```
