@@ -30,7 +30,7 @@ print("2) Leave the cave")
 
 choice = input("Enter your choice: ")
 
-if choice == '2':
+if choice == "2":
     print("You leave the cave. You are killed by a goblin outside.")
     exit()
 
