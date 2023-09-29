@@ -6,7 +6,7 @@ with open(sys.argv[1]) as f:
 
     ifs = len(re.findall(r"if .*:", src))
     elifs = len(re.findall(r"elif .*:", src))
-    elses = len(re.findall(r"else .*:", src))
+    elses = len(re.findall(r"else:", src))
     nests = len(re.findall(r"    if .*:", src))
 
     print(f"{ifs=}")
