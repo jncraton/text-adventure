@@ -1,6 +1,6 @@
 # Text Adventure
 
-This program creates a piece of [interactive fiction](https://en.wikipedia.org/wiki/Interactive_fiction) in the form of a text adventure game. If you are unfamiliar with the text adventure genre, [Colassal Cave Adventure](https://rickadams.org/adventure/advent/) is one example.
+This program creates a piece of [interactive fiction](https://en.wikipedia.org/wiki/Interactive_fiction) in the form of a text adventure game. If you are unfamiliar with the text adventure genre, [Colossal Cave Adventure](https://rickadams.org/adventure/advent/) is one example.
 
 ## Learning Outcomes
 
@@ -29,7 +29,7 @@ A goblin sees you and attacks, but you block with your sword.
 
 ## Tasks
 
-When run, your program should tell a story that includes various decision points that allow the reader experience alternate storylines. You won't be graded on the quality of your prose, but it might be more fun to explore a meaningful narrative.
+When run, your program should tell a story that includes various decision points that allow the reader to experience alternate storylines. You won't be graded on the quality of your prose, but it might be more fun to explore a meaningful narrative.
 
 1. Define the starting point of your narrative in `adventure.py`.
 2. Use `input` to collect choices from the player.
