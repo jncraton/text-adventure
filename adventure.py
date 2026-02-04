@@ -1,4 +1,4 @@
-# Disaplay the start of your narritive to the user
+# Display the start of your narrative to the user
 
 # Ask the user to choose between a number of options
 
