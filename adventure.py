@@ -6,4 +6,4 @@
 # on their answer
 
 # Continue your narrative providing additional decision points
-# Make sure that you include the appropriate everything specified
+# Make sure that you include everything specified in the readme
