@@ -14,11 +14,7 @@ After completing this experience, learners will be able to:
 
 ## Usage
 
-Run your program using Python:
-
-```bash
-python adventure.py
-```
+Handout code is provided in [adventure.py](adventure.py). This program can be run in Thonny or a Python environment of your choice.
 
 Example interaction:
 
