@@ -40,6 +40,7 @@ When run, your program should tell a story that includes various decision points
 
 ## Resources
 
+- [PY4E: Conditionals](https://www.py4e.com/html3/03-conditional)
 - [Python Input and Output](https://docs.python.org/3/tutorial/inputoutput.html)
 - [Python Control Flow](https://docs.python.org/3/tutorial/controlflow.html)
 - [Colossal Cave Adventure](https://rickadams.org/adventure/advent/)
