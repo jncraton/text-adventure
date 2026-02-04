@@ -27,17 +27,9 @@ You take the sword and leave the cave.
 A goblin sees you and attacks, but you block with your sword.
 ```
 
-## Testing
-
-if choice == "2":
-    print("You leave the cave. You are killed by a goblin outside.")
-    exit()
-
-print("You take the sword and leave the cave.")
-print("A goblin sees you and attacks, but you block with your sword.")
-```
-
 ## Tasks
+
+When run, your program should tell a story that includes various decision points that allow the reader experience alternate storylines. You won't be graded on the quality of your prose, but it might be more fun to explore a meaningful narrative.
 
 1. Define the starting point of your narrative in `adventure.py`.
 2. Use `input` to collect choices from the player.
