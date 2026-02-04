@@ -1,6 +1,6 @@
 # Text Adventure
 
-This program creates a piece of [interactive fiction](https://en.wikipedia.org/wiki/Interactive_fiction) in the form of a text adventure game.
+This program creates a piece of [interactive fiction](https://en.wikipedia.org/wiki/Interactive_fiction) in the form of a text adventure game. If you are unfamiliar with the text adventure genre, [Colassal Cave Adventure](https://rickadams.org/adventure/advent/) is one example.
 
 ## Learning Outcomes
 
