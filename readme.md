@@ -16,7 +16,7 @@ After completing this experience, learners will be able to:
 
 Handout code is provided in [adventure.py](adventure.py). This program can be run in Thonny or a Python environment of your choice.
 
-Example interaction:
+Here is the beginning of one possible narrative:
 
 ```
 You are alone in a dark cave. There is a sword next to you.
