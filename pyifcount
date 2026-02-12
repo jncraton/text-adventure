@@ -1,0 +1,86 @@
+#! /usr/bin/python3
+
+import ast
+import doctest
+import sys
+
+
+def get_stats(source):
+    """
+    >>> get_stats('if a: pass')
+    {'ifs': 1, 'elifs': 0, 'elses': 0, 'nested': 0}
+    >>> get_stats('if a: pass\\nelif b: pass\\nelse: pass')
+    {'ifs': 1, 'elifs': 1, 'elses': 1, 'nested': 0}
+    >>> get_stats('if a:\\n    if b: pass')
+    {'ifs': 2, 'elifs': 0, 'elses': 0, 'nested': 1}
+    >>> get_stats('if a:\\n    pass\\nelse:\\n    if b: pass')
+    {'ifs': 2, 'elifs': 0, 'elses': 1, 'nested': 1}
+    >>> get_stats('while True:\\n    if a: pass')
+    {'ifs': 1, 'elifs': 0, 'elses': 0, 'nested': 1}
+    >>> get_stats('if a: pass\\nif b: pass')
+    {'ifs': 2, 'elifs': 0, 'elses': 0, 'nested': 0}
+    >>> get_stats('if a: pass\\nelif b: pass\\nelif c: pass')
+    {'ifs': 1, 'elifs': 2, 'elses': 0, 'nested': 0}
+    """
+    tree = ast.parse(source)
+    stats = {"ifs": 0, "elifs": 0, "elses": 0, "nested": 0}
+
+    def walk(node, is_nested, parent_if=None):
+        if isinstance(node, ast.If):
+            is_elif = (
+                parent_if is not None
+                and node in parent_if.orelse
+                and node.col_offset == parent_if.col_offset
+            )
+
+            if is_elif:
+                stats["elifs"] += 1
+            else:
+                stats["ifs"] += 1
+                if is_nested:
+                    stats["nested"] += 1
+
+            for child in node.body:
+                walk(child, True, None)
+
+            if node.orelse:
+                first = node.orelse[0]
+                is_chained_elif = (
+                    len(node.orelse) == 1
+                    and isinstance(first, ast.If)
+                    and first.col_offset == node.col_offset
+                )
+
+                if is_chained_elif:
+                    walk(first, is_nested, node)
+                else:
+                    stats["elses"] += 1
+                    for child in node.orelse:
+                        walk(child, True, None)
+        else:
+            for child in ast.iter_child_nodes(node):
+                new_nested = is_nested or not isinstance(node, ast.Module)
+                walk(child, new_nested, None)
+
+    for node in tree.body:
+        walk(node, False, None)
+
+    return stats
+
+
+def main():
+    doctest.testmod()
+
+    if len(sys.argv) < 2:
+        return
+
+    with open(sys.argv[1]) as f:
+        src = f.read()
+
+    results = get_stats(src)
+    for key, value in results.items():
+        print(f"{key}={value}")
+
+
+if __name__ == "__main__":
+    main()
